@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/dice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:srcCompat="@drawable/dice_1" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="serif"
+        android:text="Roll Your Dice"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/second_player"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/player_score_shape"
+        android:fontFamily="@font/adamina"
+        android:gravity="center"
+        android:text="Player two"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/player_score_shape"
+        android:fontFamily="@font/adamina"
+        android:gravity="center"
+        android:text="Current player"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/dice"
+        app:layout_constraintStart_toStartOf="@+id/dice"
+        app:layout_constraintTop_toBottomOf="@+id/dice" />
+
+    <TextView
+        android:id="@+id/first_player"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/player_score_shape"
+        android:fontFamily="@font/adamina"
+        android:gravity="center"
+        android:text="Player One"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/Roll_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Roll"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/second_player"
+        app:layout_constraintStart_toStartOf="@+id/first_player"
+        app:layout_constraintTop_toBottomOf="@+id/second_player" />
+
+    <TextView
+        android:id="@+id/p1_score"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:background="@drawable/player_score_shape"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="0"
+        android:textColor="#1607D5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/first_player"
+        app:layout_constraintStart_toEndOf="@+id/first_player"
+        app:layout_constraintTop_toTopOf="@+id/first_player" />
+
+    <TextView
+        android:id="@+id/p2_score"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="7dp"
+        android:background="@drawable/player_score_shape"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="0"
+        android:textColor="#0C2BDC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/second_player"
+        app:layout_constraintEnd_toStartOf="@+id/second_player"
+        app:layout_constraintTop_toTopOf="@+id/second_player" />
+
+    <TextView
+        android:id="@+id/current_player"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/player_score_shape"
+        android:fontFamily="@font/adamina"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/winning_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/winning_shape"
+        android:fontFamily="@font/adamina"
+        android:gravity="center"
+        android:padding="5dp"
+       android:visibility="invisible"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="@+id/dice"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/dice"
+        app:layout_constraintTop_toBottomOf="@+id/dice"
+        app:layout_constraintVertical_bias="0.393" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confettiAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"/>
+
+    <View
+        android:id="@+id/dimBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
